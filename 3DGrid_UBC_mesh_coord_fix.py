@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-This script is fixes UBC mesh files output by Naser Meqbel's 
+This script fixes UBC mesh files output by Naser Meqbel's 
 3DGrid software. It uses location information gleaned from
 a ModEM format data file to edit the UBC mesh so as to ensure
 the UBC model ends up in the right location when imported into
