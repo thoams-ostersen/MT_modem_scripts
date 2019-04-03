@@ -18,7 +18,7 @@ wgs84_proj = Proj(init='epsg:4326')
 mga55_proj = Proj(init='epsg:28355')  
 
 # link to response file of interest
-res_file=r"D:\Google Drive\university\tas_MT\modelling\3D\KUTh_inversions\no_topo_modelling\inv2\run2_7_NLCG_031.res"
+res_file=r"D:\inv2\run2_7_NLCG_031.res"
     
 # read res file to get column names
 f = open(res_file)
