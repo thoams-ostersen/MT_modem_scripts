@@ -29,7 +29,9 @@ with open(log_fn,'r') as log:
 
 # make list of iteration values
 iteration_rms = []
-for i in text:
+for idx,i in enumerate(text):
+    if idx == 2: # extract line 2 for starting RMS
+        iteration_rms.append(re.split('\s+',i)[5:6])         
     if i.find('with:') != -1:
         iteration_rms.append(re.split('\s+',i)[5:6])
 iteration_rms = map(''.join, iteration_rms)
