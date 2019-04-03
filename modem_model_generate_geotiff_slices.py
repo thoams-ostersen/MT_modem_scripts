@@ -49,9 +49,7 @@ print 'Number of padding cells in x direction:', x_pad_cells
 print 'Number of padding cells in y direction:', y_pad_cells
 
 # get centre position of model grid in UTM coordinates from data file 
-x0, y0 = [np.median(data.station_locations.station_locations[dd] 
-        - data.station_locations.station_locations['rel_' + dd]) 
-        for dd in ['east', 'north']]
+x0, y0 = [np.median(data.station_locations.station_locations[dd] - data.station_locations.station_locations['rel_' + dd]) for dd in ['east', 'north']]
 
 # save a GOCAD sgrid file to same directory as rho and dat file
 sgrid_out = modem_rho.replace('.rho','_sgrid')
