@@ -23,8 +23,8 @@ import pandas as pd
 import mtpy.modeling.modem as modem 
 
 # define ModEM model and data files from which grids will be generated
-modem_rho = r"D:\run27_grids\inv3\run3_7_NLCG_032.rho"
-modem_dat = r"D:\run27_grids\inv3\run3_7_NLCG_032.dat"
+modem_rho = r"D:\run2_7_NLCG_031.rho"
+modem_dat = r"D:\run2_7_NLCG_031.dat"
 
 # set some key model parameters
 y_pad_cells = 15    # input number of x padding cells
@@ -49,14 +49,16 @@ print 'Number of padding cells in x direction:', x_pad_cells
 print 'Number of padding cells in y direction:', y_pad_cells
 
 # get centre position of model grid in UTM coordinates from data file 
-x0, y0 = [np.median(data.station_locations.station_locations[dd] - data.station_locations.station_locations['rel_' + dd]) for dd in ['east', 'north']]
+x0, y0 = [np.median(data.station_locations.station_locations[dd] 
+        - data.station_locations.station_locations['rel_' + dd]) 
+        for dd in ['east', 'north']]
 
 # save a GOCAD sgrid file to same directory as rho and dat file
 sgrid_out = modem_rho.replace('.rho','_sgrid')
 model.write_gocad_sgrid_file(fn=sgrid_out,origin=[x0,y0,model_top])
 
 # print some details to console/terminal
-print '\n','GOCAD Sgrid file saved as:','\n','\t',sgrid,'\n'
+print '\n','GOCAD Sgrid file saved as:','\n','\t',sgrid_out,'\n'
 
 # read newly saved sgrid as a pandas data frame and make a list of unique z values for slicing
 sgrid = os.path.join(os.path.dirname(sgrid_out),(os.path.basename(sgrid_out) + '__ascii@@'))
