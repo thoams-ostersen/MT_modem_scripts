@@ -40,7 +40,7 @@ iteration_rms = map(''.join, iteration_rms)
 df = pd.DataFrame.from_dict(iteration_rms)
 df = df.rename(columns = {0:'RMS'})
 df = df.astype(float)
-df['iter'] = df.index + 1
+df['iter'] = df.index 
 df = df[['iter','RMS']]
 
 # write output csv file for later plotting
