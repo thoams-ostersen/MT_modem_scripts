@@ -76,4 +76,4 @@ with open(inmesh,'w') as out_mesh:
     out_mesh.write(data[4].replace(',','\t'))
 
 # print confirmation
-print 'Fixed Naser Meqbel\'s 3DGrid UBC mesh file. Ready for import into viewing software.
+print 'Fixed Naser Meqbel\'s 3DGrid UBC mesh file. Ready for import into viewing software.'
